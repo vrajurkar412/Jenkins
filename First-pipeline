@@ -6,6 +6,9 @@ pipeline {
             steps {
                 echo 'Building the code'
                 echo 'This is a simple pipeline.'
+                nodejs('Node'){
+                  sh 'yarn install'
+              }
             }
         }
 
