@@ -1,35 +1,29 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'Node' // Ensure that 'Node' is configured under Global Tools Configuration
-    }
-
     stages {
         stage('Building') {
             steps {
                 echo 'Building the code'
                 echo 'This is a simple pipeline.'
-                echo 'Triggering the pipeline...'
-
-                script {
-                    withEnv(["PATH+NODE=${tool 'Node'}/bin"]) {
-                        sh 'yarn install'
-                    }
-                }
+                echo 'trigger.-.--.--------.-.'
+                 nodejs('Node'){
+                  sh 'yarn install'
+              }
             }
         }
 
         stage('Testing') {
             steps {
                 echo 'Testing the code!'
-                sh 'yarn test' // Run tests
+                echo 'This is a simple pipeline.'
             }
         }
 
         stage('Deployment') {
             steps {
-                echo 'Deploying the code...'
+                echo 'Deployment of code is done'
+                echo 'This is a simple pipeline.'
                 echo 'Pipeline execution successful! ✅'
             }
         }
