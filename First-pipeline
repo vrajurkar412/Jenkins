@@ -7,9 +7,7 @@ pipeline {
                 echo 'Building the code'
                 echo 'This is a simple pipeline.'
                 echo 'trigger.-.--.--------.-.'
-                 nodejs('Node'){
-                  sh 'yarn install'
-              }
+                
             }
         }
 
